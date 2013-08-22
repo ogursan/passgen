@@ -1,0 +1,31 @@
+{
+    "manifest_version":2,
+    "name":"Генератор паролей",
+    "version":"1.2",
+    "icons":{
+        "16":"i/16.png",
+        "32":"i/32.png",
+        "48":"i/48.png",
+        "128":"i/128.png"
+    },
+
+    "permissions":[
+        "tabs",
+        "contextMenus",
+        "notifications"
+    ],
+
+    "background":{
+        "page":"background.html"
+    },
+
+    "web_accessible_resources":[
+        "i/48.png"
+    ],
+
+    "browser_action":{
+        "default_title":"Сгенерировать пароль",
+        "default_icon":"i/48.png",
+        "default_popup":"popup.html"
+    }
+}

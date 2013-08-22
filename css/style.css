@@ -1,0 +1,37 @@
+body {
+    font-family: Verdana, sans-serif;
+    font-size: 12px;
+}
+
+label, input {
+    display: block;
+}
+
+input {
+    border: 1px solid black;
+    padding: 4px;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 220px;
+}
+
+input[type="number"] {
+    width: 70px;
+}
+
+input:focus {
+    outline: none;
+}
+
+#main {
+    width: 260px;
+    margin: 5px;
+}
+
+ol li {
+    padding: 0px;
+    margin-left: -10px;
+    font-family: monospace;
+}
