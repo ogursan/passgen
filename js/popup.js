@@ -2,7 +2,7 @@ var defaultSettings = {
     "enabled": "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890!@#$%^&*()_+",
     "len": 8,
     "amount": 3
-}
+};
 
 $(function(){
     $('#length').val((typeof localStorage['len'] !== 'undefined') ? localStorage['len'] : defaultSettings['len']);
@@ -23,6 +23,35 @@ $(function(){
             var pass = generatePass(enabled, len);
             $('#list').append('<li>'+pass+'</li>');
             amount--;
+        }
+
+        $('#save').show();
+    });
+
+    $('#save').click(function(){
+        var li = $('#list li');
+        var passwords = [];
+
+        for (var i = 0, j = li.length; i < j; ++i) {
+            passwords.push($(li[i]).text());
+        }
+
+        localStorage['savedTable'] = JSON.stringify(passwords);
+        alert('Таблица сохранена');
+    });
+
+    $('#show').click(function(){
+        if (typeof localStorage['savedTable'] === 'undefined') {
+            alert('Таблица пуста');
+            return;
+        }
+
+        var passwords = JSON.parse(localStorage['savedTable']);
+        var list = $('#list');
+        $(list).html('');
+
+        for (var i in passwords) {
+            $(list).append('<li>' + passwords[i] + '</li>');
         }
     });
 });

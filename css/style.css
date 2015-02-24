@@ -35,3 +35,17 @@ ol li {
     margin-left: -10px;
     font-family: monospace;
 }
+
+#save {
+    display: none;
+}
+
+#generate, #show {
+    display: inline-block;
+    cursor: pointer;
+}
+
+#show {
+    border: none;
+    background: none;
+}
